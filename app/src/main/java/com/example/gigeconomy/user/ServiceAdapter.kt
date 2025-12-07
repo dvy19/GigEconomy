@@ -32,6 +32,8 @@ class ServiceAdapter(
         holder.binding.txtServiceName.text = serviceName
 
 
+
+
         // Set correct image based on service name
         val imageRes = when (serviceName) {
             "Chef" ->R.drawable.chef
@@ -42,6 +44,8 @@ class ServiceAdapter(
             "Plumber" -> R.drawable.technician
             else -> R.drawable.technician
         }
+
+
 
 
         holder.binding.imgService.setImageResource(imageRes)

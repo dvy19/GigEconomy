@@ -56,6 +56,7 @@ class UserHomeFragment : Fragment() {
         binding.recyclerJobs.layoutManager = LinearLayoutManager(requireContext())
 
         loadAllJobs()
+
     }
 
 

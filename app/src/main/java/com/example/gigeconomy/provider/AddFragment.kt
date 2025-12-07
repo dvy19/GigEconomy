@@ -48,6 +48,8 @@ class AddFragment : Fragment() {
             val city = binding.City.text.toString()
             val contact = binding.Contact.text.toString()
 
+            val category=binding.ServiceCategory.text.toString()
+
             // Optional: Check required fields
             if (serviceType.isEmpty() || ownerName.isEmpty() || rate.isEmpty()) {
                 Toast.makeText(requireContext(), "Fill all required fields", Toast.LENGTH_SHORT).show()
@@ -61,14 +63,21 @@ class AddFragment : Fragment() {
                 .id
 
             val job = jobDetails(
-                            // add jobId inside object
+                jobId = jobId,  // add jobId inside object
                 serviceType = serviceType,
+                category = category,
                 serviceDes = serviceDes,
                 ownerName = ownerName,
                 city = city,
                 contact = contact,
                 rate = rate
             )
+
+            firestore.collection("providers")
+                .document(currentUser.uid)
+                .collection("jobs")
+                .document(jobId)
+                .set(job)
 
             // Save job
             firestore.collection("providers")

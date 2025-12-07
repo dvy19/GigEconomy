@@ -61,6 +61,7 @@ class UserDetailActivity : AppCompatActivity() {
                 .set(userData)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Saved successfully!", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, UserMainActivity::class.java))
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()

@@ -5,17 +5,58 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.gigeconomy.R
+import com.example.gigeconomy.databinding.UserFragmentProfileBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class ProfileFragment : Fragment() {
+
+    private lateinit var binding: UserFragmentProfileBinding
+    private val db = FirebaseFirestore.getInstance()
+    private val auth = FirebaseAuth.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        binding = UserFragmentProfileBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        loadProfile()
+    }
+
+    private fun loadProfile() {
+        val uid = auth.currentUser?.uid ?: return
+
+        db.collection("users")
+            .document(uid)
+            .collection("profile")
+            .document("details")   // ← use your profile doc name
+            .get()
+            .addOnSuccessListener { snapshot ->
+
+                if (snapshot.exists()) {
+
+                    val name = snapshot.getString("fullName") ?: ""
+                    val homeAddress = snapshot.getString("homeAddress") ?: ""
+                    val city = snapshot.getString("City") ?: ""
+                    val pin = snapshot.getString("pin") ?: ""
+
+                    // Set data to UI
+                    binding.userDisName.text = name
+                    binding.userDisAddress.text = homeAddress
+                    binding.userDisCity.text = city
+                    binding.userDisPin.text = pin
+                }
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireContext(), "Unable to load profile", Toast.LENGTH_SHORT).show()
+            }
+    }
 }

@@ -56,6 +56,28 @@
             android:paddingEnd="16dp"
             android:layout_marginBottom="20dp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category *"
+            android:textSize="15sp"
+            android:textColor="#334155"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="4dp" />
+
+        <EditText
+            android:id="@+id/ServiceCategory"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Home, Electrician, Chef...."
+            android:inputType="textCapWords"
+            app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/inputs"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="20dp" />
+
         <!-- Company Name -->
         <TextView
             android:layout_width="match_parent"

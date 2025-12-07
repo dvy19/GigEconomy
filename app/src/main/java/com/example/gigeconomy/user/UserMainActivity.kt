@@ -30,6 +30,10 @@ class UserMainActivity : AppCompatActivity() {
             goToFragment(UserHomeFragment())
         }
 
+        binding.userProfile.setOnClickListener{
+            goToFragment(ProfileFragment())
+        }
+
 
 
 
