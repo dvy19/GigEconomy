@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1070537775468",
+    "project_id": "gigeconomy-9fac5",
+    "storage_bucket": "gigeconomy-9fac5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070537775468:android:8c27526d305a3c27ad7b49",
+        "android_client_info": {
+          "package_name": "com.example.gigeconomy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPY4l0Bu7OywAtPuoqI7RDz9P4vEb90sg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

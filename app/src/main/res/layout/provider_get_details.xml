@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="34dp"
+    android:gravity="center"
+    android:background="@drawable/download"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/form_back"
+        android:backgroundTint="@color/white"
+        android:elevation="10dp"
+        android:padding="20dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Your Account"
+            android:textColor="@color/purple_700"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            />
+
+        <EditText
+            android:background="@drawable/inputs"
+            android:id="@+id/companyName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="16sp"
+            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:textColorHint="@color/black"
+            android:hint="Company Name"
+            android:textColor="@color/black"/>
+
+
+        <EditText
+            android:textSize="16sp"
+            android:background="@drawable/inputs"
+            android:id="@+id/providerAddress"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:layout_marginTop="10dp"
+            android:hint="Address"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"/>
+        <EditText
+            android:textSize="16sp"
+            android:background="@drawable/inputs"
+            android:id="@+id/ownerName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:layout_marginTop="10dp"
+            android:hint="Owner Name"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <EditText
+                android:textSize="16sp"
+                android:background="@drawable/inputs"
+                android:id="@+id/providerCity"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:textColorHint="@color/black"
+                android:hint="Enter City"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:textSize="16sp"
+                android:background="@drawable/inputs"
+                android:id="@+id/providerPinCode"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textColorHint="@color/black"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:layout_marginTop="10dp"
+                android:inputType="number"
+                android:hint="Pin Code"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+
+
+        <CheckBox
+            android:layout_marginTop="15dp"
+            android:buttonTint="@color/black"
+            android:id="@+id/checkBoxAgree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="By Creating Your account you agree with our Terms of Services and Privacy Policy"
+            android:checked="false"
+            android:padding="8dp"/>
+
+
+
+        <Button
+            android:id="@+id/submitProviderDetails"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:textSize="18sp"
+            android:background="@drawable/btn_back"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:padding="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textAllCaps="false"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
