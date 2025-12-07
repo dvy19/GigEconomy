@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Content area -->
+    <FrameLayout
+
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Bottom nav using buttons -->
+    <LinearLayout
+        android:background="@color/purple_700"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="13dp"
+        >
+
+
+
+        <TextView
+            android:gravity="center_horizontal"
+
+            android:id="@+id/userHome"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+
+            android:id="@+id/userAdd"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+
+            android:id="@+id/userCreate"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+
+            android:id="@+id/userChat"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Chat"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:id="@+id/userProfile"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+
+
+
+
+
+    </LinearLayout>
+</LinearLayout>
