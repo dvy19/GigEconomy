@@ -37,9 +37,9 @@ class ProviderDetailsActivity : AppCompatActivity() {
             val city=binding.providerCity.text.toString()
             val company=binding.companyName.text.toString()
 
-            val currentUser=auth.currentUser
+            val currentProvider=auth.currentUser
 
-            if (currentUser == null) {
+            if (currentProvider == null) {
                 Toast.makeText(this, "Not logged in", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -54,7 +54,7 @@ class ProviderDetailsActivity : AppCompatActivity() {
 
 
             firestore.collection("providers")
-                .document(currentUser.uid)
+                .document(currentProvider.uid)
                 .set(providerProfile)
                 .addOnSuccessListener{
 

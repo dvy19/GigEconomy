@@ -50,6 +50,24 @@ class UserHomeFragment : Fragment() {
         binding.rvServiceTypes.adapter = serviceAdapter
 
 
+
+        val categoryTypes = listOf(
+            "Home",
+            "Electrician",
+            "Gardening",
+            "Vehicle Repair",
+            "Electrician",
+            "Plumber"
+        )
+
+        val categoryAdapter = CategoryAdapter(serviceTypes)
+
+        binding.rvCategoryTypes.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+        binding.rvCategoryTypes.adapter = categoryAdapter
+
+
         // -------------------------------
         // Setup Vertical Jobs Recycler
         // -------------------------------

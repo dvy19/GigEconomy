@@ -1,11 +1,13 @@
 package com.example.gigeconomy.user
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.gigeconomy.GetStarted
 import com.example.gigeconomy.R
 import com.example.gigeconomy.databinding.UserFragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -28,8 +30,21 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        binding.userLogout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+
+            val intent = Intent(requireContext(), GetStarted::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+
+            requireActivity().finish()
+        }
+
         loadProfile()
     }
+
+
 
     private fun loadProfile() {
         val uid = auth.currentUser?.uid ?: return

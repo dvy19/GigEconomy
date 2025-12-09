@@ -43,6 +43,7 @@ class JobAdapter(private val jobList: List<jobDetails>) :
             val context = holder.itemView.context
             val intent = Intent(context, ServiceLayoutActivity::class.java)
             intent.putExtra("jobId", job.jobId)
+
             context.startActivity(intent)
         }
         holder.imageCategory.setImageResource(getCategoryImage(job.category))
