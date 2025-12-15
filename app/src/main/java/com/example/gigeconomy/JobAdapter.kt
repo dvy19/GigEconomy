@@ -1,11 +1,13 @@
 package com.example.gigeconomy
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gigeconomy.provider.jobDetails
 import kotlinx.coroutines.Job
@@ -35,14 +37,32 @@ class JobAdapter(private val jobList: List<jobDetails>) :
 
 
         val job = jobList[position]
+
         holder.serviceType.text = job.serviceType
         holder.companyName.text = job.companyName
         holder.rate.text = "₹${job.rate}"
+        holder.imageCategory.setImageResource(getCategoryImage(job.category))
+
+
 
         holder.viewJobDetail.setOnClickListener {
             val context = holder.itemView.context
+
+            Log.d("JOB_ADAPTER", "jobId=${job.jobId}, providerId=${job.providerId}")
+
+            if (job.jobId.isEmpty()) {
+                Toast.makeText(context, "Invalid job id", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (job.providerId.isEmpty()) {
+                Toast.makeText(context, "Invalid provider id", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+
             val intent = Intent(context, ServiceLayoutActivity::class.java)
             intent.putExtra("jobId", job.jobId)
+            intent.putExtra("providerId", job.providerId)
 
             context.startActivity(intent)
         }

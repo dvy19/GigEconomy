@@ -2,6 +2,7 @@ package com.example.gigeconomy.provider
 
 data class jobDetails(
     val jobId: String="",
+    val providerId: String = "",
     val category:String="",
     val serviceType:String="",
     val companyName:String="",
@@ -10,7 +11,4 @@ data class jobDetails(
     val contact:String="",
     val serviceDes:String="",
     val rate:String=""
-
-
-
 )

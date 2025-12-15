@@ -64,6 +64,7 @@ class AddFragment : Fragment() {
 
             val job = jobDetails(
                 jobId = jobId,  // add jobId inside object
+                providerId = currentUser.uid,
                 serviceType = serviceType,
                 category = category,
                 serviceDes = serviceDes,
@@ -73,11 +74,6 @@ class AddFragment : Fragment() {
                 rate = rate
             )
 
-            firestore.collection("providers")
-                .document(currentUser.uid)
-                .collection("jobs")
-                .document(jobId)
-                .set(job)
 
             // Save job
             firestore.collection("providers")

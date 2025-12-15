@@ -31,6 +31,10 @@ class ProviderMainActivity : AppCompatActivity() {
             goToFragment(AddFragment())
         }
 
+        binding.providerProfile.setOnClickListener{
+            goToFragment(ProfileFragment())
+        }
+
 
 
     }

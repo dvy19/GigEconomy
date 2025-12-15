@@ -1,19 +1,13 @@
 package com.example.gigeconomy.user
 
-
 import android.view.LayoutInflater
-import com.example.gigeconomy.R
-
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gigeconomy.databinding.ItemCategoryBinding
 
-
 class CategoryAdapter(
-    private val CategoryList: List<String>
+    private val categoryList: List<String>,
+    private val onItemClick: (String) -> Unit // click listener lambda
 ) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
     inner class CategoryViewHolder(val binding: ItemCategoryBinding)
@@ -27,15 +21,13 @@ class CategoryAdapter(
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        val CategoryName = CategoryList[position]
+        val categoryName = categoryList[position]
+        holder.binding.txtCategoryName.text = categoryName
 
-        holder.binding.txtCategoryName.text = CategoryName
-
-
-
-
-
+        holder.itemView.setOnClickListener {
+            onItemClick(categoryName) // pass the selected category
+        }
     }
 
-    override fun getItemCount(): Int = CategoryList.size
+    override fun getItemCount(): Int = categoryList.size
 }

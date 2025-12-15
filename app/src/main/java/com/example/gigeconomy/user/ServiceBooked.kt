@@ -1,13 +1,15 @@
 package com.example.gigeconomy.user
 
 data class ServiceBooked(
-    val jobId: String="",
-    val category:String="",
-    val serviceType:String="",
-    val companyName:String="",
-    val ownerName:String="",
-    val city:String="",
-    val contact:String="",
-    val serviceDes:String="",
-    val rate:String=""
+    val bookingId: String = "",
+    val jobId: String = "",
+    val providerId: String = "",
+    val userId: String = "",
+    val serviceType: String = "",
+    val category: String = "",
+    val rate: String = "",
+    val city: String = "",
+    val status: String = "requested", // requested, ongoing, completed, cancelled
+    val bookingTime: Long = System.currentTimeMillis(),
+    val completionTime: Long? = null
 )
