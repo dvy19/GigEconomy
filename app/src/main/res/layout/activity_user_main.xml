@@ -41,7 +41,7 @@
 
         <TextView
             android:gravity="center_horizontal"
-            android:id="@+id/userView"
+            android:id="@+id/ongoingReq"
             android:clickable="true"
             android:focusable="true"
             android:layout_width="0dp"

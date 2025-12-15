@@ -34,6 +34,10 @@ class UserMainActivity : AppCompatActivity() {
             goToFragment(ProfileFragment())
         }
 
+        binding.ongoingReq.setOnClickListener{
+            goToFragment(OngoingReqFragment())
+        }
+
 
 
 
