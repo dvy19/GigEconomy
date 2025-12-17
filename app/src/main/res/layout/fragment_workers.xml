@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Worker Registration"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#1E293B"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            android:padding="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Workers details below"
+            android:textSize="14sp"
+            android:textColor="#64748B"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Service Type -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Full Name"
+            android:textSize="15sp"
+            android:textColor="#334155"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="4dp" />
+
+        <EditText
+            android:id="@+id/workerName"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Name"
+            android:inputType="textCapWords"
+            app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/inputs"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Category *"
+            android:textSize="15sp"
+            android:textColor="#334155"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="4dp" />
+
+        <EditText
+            android:id="@+id/workerCategory"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Home, Electrician, Chef...."
+            android:inputType="textCapWords"
+            app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/inputs"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Company Name -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Company Name *"
+            android:textSize="15sp"
+            android:textColor="#334155"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="4dp" />
+
+        <EditText
+            android:id="@+id/CompanyName"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Enter your company name"
+            android:inputType="textCapWords"
+            app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/inputs"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Owner Name -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Owner Name *"
+            android:textSize="15sp"
+            android:textColor="#334155"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="4dp" />
+
+        <EditText
+            android:id="@+id/OwnerName"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Full name of owner"
+            android:inputType="textCapWords"
+            app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/inputs"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- City -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="City *"
+            android:textSize="15sp"
+            android:textColor="#334155"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="4dp" />
+
+        <EditText
+            android:id="@+id/City"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Enter your city"
+            android:inputType="textCapWords"
+            app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/inputs"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Rate per Hour -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Experience"
+            android:textSize="15sp"
+            android:textColor="#334155"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="4dp" />
+
+        <EditText
+            android:id="@+id/workerExp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Fresher, 2yrs....."
+            android:inputType="numberDecimal"
+            app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/inputs"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Contact Number -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact Number *"
+            android:textSize="15sp"
+            android:textColor="#334155"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="4dp" />
+
+        <EditText
+            android:id="@+id/workerContact"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="10-digit mobile number"
+            android:inputType="phone"
+            android:maxLength="10"
+            app:hintTextColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/inputs"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="20dp" />
+
+
+        <!-- Buttons Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <!-- Cancel Button -->
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="Cancel"
+                android:textSize="16sp"
+                android:textColor="#475569"
+
+                android:layout_marginEnd="8dp" />
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/btnWorkerSubmit"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="Add Worker"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Footer Note -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="* Required fields"
+            android:textSize="12sp"
+            android:textColor="#94A3B8"
+            android:gravity="center"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+
+</ScrollView>
