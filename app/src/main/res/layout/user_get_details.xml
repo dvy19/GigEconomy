@@ -23,8 +23,18 @@
             android:layout_height="wrap_content"
             android:text="Create Your Account"
             android:textColor="@color/purple_700"
-            android:textSize="23sp"
+            android:textSize="25sp"
             android:textStyle="bold"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fill your  information below"
+            android:textColor="#80000000"
+            android:textSize="15sp"
             android:layout_gravity="center"
             />
 
