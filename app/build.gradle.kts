@@ -60,6 +60,8 @@ dependencies {
     // AppCompat
     implementation("androidx.appcompat:appcompat:1.6.1")
 
+
+
     // Material Design
     implementation("com.google.android.material:material:1.12.0")
 

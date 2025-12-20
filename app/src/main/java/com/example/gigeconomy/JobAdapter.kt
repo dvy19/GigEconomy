@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gigeconomy.provider.jobDetails
 import kotlinx.coroutines.Job
@@ -20,9 +21,10 @@ class JobAdapter(private val jobList: List<jobDetails>) :
         val serviceName: TextView = itemView.findViewById(R.id.txtServiceName)
         val rate: TextView = itemView.findViewById(R.id.txtRate)
         val imageCategory: ImageView = itemView.findViewById(R.id.imgCategory)
+        val city:TextView=itemView.findViewById(R.id.serviceCity)
 
         // 🔥 ADD THIS
-        val viewJobDetail: View = itemView.findViewById(R.id.viewJobDetail)
+        val viewJobDetail: CardView = itemView.findViewById(R.id.viewJobDetail)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobViewHolder {
@@ -41,6 +43,7 @@ class JobAdapter(private val jobList: List<jobDetails>) :
         holder.serviceType.text = job.serviceType
         holder.companyName.text = job.companyName
         holder.rate.text = "₹${job.rate}"
+        holder.city.text=job.city
         holder.imageCategory.setImageResource(getCategoryImage(job.category))
 
 
