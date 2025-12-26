@@ -2,25 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="@drawable/download"
+    android:background="@color/white"
     android:padding="34dp"
     android:layout_height="match_parent">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/back"
-        />
 
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Let’s Get You Started!"
-        android:gravity="center"
+        android:text="What's Your Number ?"
         android:textStyle="bold"
-
         android:textColor="@color/black"
         android:textSize="25sp"/>
 
@@ -28,33 +19,43 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Your Phone Number To Receive an OTP"
-        android:gravity="center"
+        android:text="We'll send you a code to Enter and verify your account"
         android:textColor="#70000000"
         android:textSize="18sp"/>
 
 
     <EditText
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/inputs"
+
+        android:background="@drawable/number_input"
         android:id="@+id/userMobile"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:ems="10"
         android:layout_marginTop="20dp"
         android:inputType="number"
-        android:hint="Phone Number"
+        android:textColorHint="#50000000"
+
+        android:hint="+91 - "
         android:textColor="@color/black"/>
 
+    <TextView
+        android:layout_marginTop="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By tapping to Send Code, you agree to our terms.\nYou may recieve SMS notifications from us."
+        android:textColor="#40000000"
+        />
+
     <Button
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+
+
         android:background="@drawable/btn_back"
         android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
-        android:text="Continue"
+        android:text="Send Code"
+        android:elevation="4dp"
+
         android:textSize="18sp"
         android:textAllCaps="false"
         android:clickable="true"

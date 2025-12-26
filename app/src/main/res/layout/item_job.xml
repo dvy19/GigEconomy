@@ -27,7 +27,7 @@
 
             <!-- Doctor Image -->
             <ImageView
-                android:id="@+id/imgDoctor"
+                android:id="@+id/imgService"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:scaleType="centerCrop"
@@ -47,8 +47,8 @@
                 android:textColor="#1F2937"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/imgDoctor"
-                app:layout_constraintTop_toTopOf="@id/imgDoctor"
+                app:layout_constraintStart_toEndOf="@id/imgService"
+                app:layout_constraintTop_toTopOf="@id/imgService"
                 app:layout_constraintEnd_toStartOf="@id/tvRating"/>
 
             <!-- Rating -->

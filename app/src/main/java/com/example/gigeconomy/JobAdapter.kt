@@ -11,20 +11,21 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gigeconomy.provider.jobDetails
-import kotlinx.coroutines.Job
+
+//shown in home screen of  user
+
 class JobAdapter(private val jobList: List<jobDetails>) :
     RecyclerView.Adapter<JobAdapter.JobViewHolder>() {
 
     class JobViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val serviceType: TextView = itemView.findViewById(R.id.txtServiceType)
-        val companyName: TextView = itemView.findViewById(R.id.txtCompanyName)
-        val serviceName: TextView = itemView.findViewById(R.id.txtServiceName)
-        val rate: TextView = itemView.findViewById(R.id.txtRate)
-        val imageCategory: ImageView = itemView.findViewById(R.id.imgCategory)
+        val serviceType: TextView = itemView.findViewById(R.id.ServiceType)
+        val companyName: TextView = itemView.findViewById(R.id.companyName)
+        val rate: TextView = itemView.findViewById(R.id.rate)
+        val imgService: ImageView = itemView.findViewById(R.id.imgCategory)
         val city:TextView=itemView.findViewById(R.id.serviceCity)
 
         // 🔥 ADD THIS
-        val viewJobDetail: CardView = itemView.findViewById(R.id.viewJobDetail)
+        val viewJobDetail: View = itemView.findViewById(R.id.viewJobDetail)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobViewHolder {
@@ -44,7 +45,7 @@ class JobAdapter(private val jobList: List<jobDetails>) :
         holder.companyName.text = job.companyName
         holder.rate.text = "₹${job.rate}"
         holder.city.text=job.city
-        holder.imageCategory.setImageResource(getCategoryImage(job.category))
+        holder.imgService.setImageResource(getCategoryImage(job.category))
 
 
 
@@ -69,7 +70,7 @@ class JobAdapter(private val jobList: List<jobDetails>) :
 
             context.startActivity(intent)
         }
-        holder.imageCategory.setImageResource(getCategoryImage(job.category))
+        holder.imgService.setImageResource(getCategoryImage(job.category))
     }
 
     private fun getCategoryImage(category: String): Int {
