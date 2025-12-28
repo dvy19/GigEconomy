@@ -51,8 +51,6 @@ class ProfileFragment : Fragment() {
 
         db.collection("users")
             .document(uid)
-            .collection("profile")
-            .document("details")   // ← use your profile doc name
             .get()
             .addOnSuccessListener { snapshot ->
 

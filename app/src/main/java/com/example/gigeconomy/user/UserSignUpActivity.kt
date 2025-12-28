@@ -2,10 +2,12 @@ package com.example.gigeconomy.user
 
 import android.R.attr.phoneNumber
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.gigeconomy.R
@@ -30,6 +32,12 @@ class UserSignUpActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         binding.userMobileSubmit.setOnClickListener {
+
+            binding.userMobileSubmit.isEnabled = false
+            binding.userMobileSubmit.text = "Sending..."
+            binding.userMobileSubmit.setBackgroundColor(Color.parseColor("#40fac238"))
+
+
             val phoneInput = binding.userMobile.text.toString().trim()
 
             if (phoneInput.isEmpty() || phoneInput.length < 10) {

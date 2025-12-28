@@ -1,6 +1,7 @@
 package com.example.gigeconomy.user
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -29,6 +30,10 @@ class UserOTPActivity : AppCompatActivity() {
         val verificationId = intent.getStringExtra("verificationId")
 
         binding.userOtpSubmit.setOnClickListener {
+
+            binding.userOtpSubmit.isEnabled = false
+            binding.userOtpSubmit.text = "Verifying..."
+            binding.userOtpSubmit.setBackgroundColor(Color.parseColor("#40fac238"))
             val otp = binding.userOTP.text.toString().trim()
 
             if (otp.isEmpty()) {

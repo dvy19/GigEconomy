@@ -1,106 +1,165 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:padding="34dp"
-    tools:context=".user.ProfileFragment">
+    android:background="@drawable/download"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Profile"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:background="@drawable/form_back"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center"
+        android:gravity="center"
         >
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/chef"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:text="UserName"
+            android:id="@+id/userDisName"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Your Profile"
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Member since 2021"
+            android:textColor="#70000000"
+            android:textSize="14sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Details"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:paddingTop="12dp"
+            />
+
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:paddingStart="10dp"
+            android:orientation="horizontal"
+            android:paddingEnd="10dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/inputs">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/homee"
+                android:background="@color/white"
+                android:padding="10dp"
                 />
 
-            <TextView
-                android:id="@+id/userDisName"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username"
-                android:textColor="@color/black"
-                android:textSize="20sp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/userDisAddress"
+                    android:text="D 214 Sector 35"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home Address"
+                    android:textColor="#60000000"
+                    android:textSize="15sp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:paddingStart="10dp"
+            android:orientation="horizontal"
+            android:paddingEnd="10dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/inputs">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/location"
+                android:background="@color/white"
+                android:padding="10dp"
                 />
 
-            <TextView
-                android:layout_marginTop="15dp"
-                android:id="@+id/userDisAddress"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Address"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                />
-
-            <TextView
-                android:layout_marginTop="15dp"
-                android:id="@+id/userDisCity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="City"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                />
-
-            <TextView
-                android:layout_marginTop="15dp"
-                android:id="@+id/userDisPin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pin"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Add Email"
-                android:background="@drawable/btn_back"
-                android:textAllCaps="false"
-                android:layout_gravity="center"
-                android:padding="12dp"
-                android:layout_marginTop="20dp"
-                android:id="@+id/userAddMail"
-                android:clickable="true"
-                android:focusable="true"/>
-
-
-
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="log out"
-                android:background="@drawable/btn_back"
-                android:textAllCaps="false"
-                android:layout_gravity="center"
-                android:padding="12dp"
-                android:layout_marginTop="20dp"
-                android:id="@+id/userLogout"
-                android:clickable="true"
-                android:focusable="true"/>
-
-
-
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/userDisCity"
+                    android:text="Noida"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City"
+                    android:textColor="#60000000"
+                    android:textSize="15sp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    />
+            </LinearLayout>
 
 
 
@@ -108,8 +167,36 @@
 
 
 
-
-
     </LinearLayout>
 
-</FrameLayout>
+
+    <Button
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:textColor="#70ff0000"
+        android:background="@drawable/number_input"
+        android:elevation="8dp"
+        android:id="@+id/userLogout"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add E mail"
+        android:background="@drawable/btn_back"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        />
+
+
+
+
+
+
+</LinearLayout>
