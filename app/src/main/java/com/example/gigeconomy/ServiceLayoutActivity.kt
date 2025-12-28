@@ -1,8 +1,12 @@
 package com.example.gigeconomy
 
+import android.R.attr.button
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+
+import androidx.core.content.ContextCompat
 import com.example.gigeconomy.databinding.ServiceLayoutBinding
 import com.example.gigeconomy.provider.jobDetails
 import com.example.gigeconomy.user.ServiceBooked
@@ -36,6 +40,17 @@ class ServiceLayoutActivity : AppCompatActivity() {
         // Book service
         binding.bookService.setOnClickListener {
 
+            binding.bookService.isEnabled = false
+            binding.bookService.text = "Loading..."
+            binding.bookService.setBackgroundColor(
+                ContextCompat.getColor(this, R.color.white)
+            )
+
+
+
+
+
+
             if (job == null) {
                 Toast.makeText(this, "Job not loaded yet", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -66,6 +81,14 @@ class ServiceLayoutActivity : AppCompatActivity() {
                 .set(booking)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Service booked!", Toast.LENGTH_SHORT).show()
+
+                    binding.bookService.isEnabled = true
+                    binding.bookService.text = "Added"
+                    binding.bookService.setBackgroundColor(Color.parseColor("#FF5722"))
+
+
+
+
                 }
                 .addOnFailureListener { e ->
                     Toast.makeText(this, "Booking failed: ${e.message}", Toast.LENGTH_SHORT).show()
@@ -97,6 +120,8 @@ class ServiceLayoutActivity : AppCompatActivity() {
                     binding.serviceDisAddress.text = it.city
                     binding.serviceDisDescription.text = it.serviceDes
                     binding.serviceDisOwnerName.text = it.ownerName
+                    binding.serviceDisCompanyName.text = it.companyName
+
                     binding.serviceDisRate.text = "₹${it.rate}"
                 }
             }
