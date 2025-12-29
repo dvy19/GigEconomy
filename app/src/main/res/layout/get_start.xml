@@ -73,7 +73,8 @@
             android:layout_marginTop="12dp"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:src="@drawable/man"
+            android:src="@drawable/service"
+            android:padding="4dp"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -97,7 +98,6 @@
             android:textAllCaps="false"
             android:textSize="16sp"
             android:layout_marginTop="12dp"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Provider"

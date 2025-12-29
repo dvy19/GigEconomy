@@ -30,6 +30,9 @@ class UserSignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
+        binding.toUserLogin.setOnClickListener{
+            startActivity(Intent(this, UserLoginActivity::class.java))
+        }
 
         binding.userMobileSubmit.setOnClickListener {
 
@@ -39,6 +42,23 @@ class UserSignUpActivity : AppCompatActivity() {
 
 
             val phoneInput = binding.userMobile.text.toString().trim()
+
+            val email=binding.userMobile.text.toString()
+            val password=binding.userPassword.text.toString()
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this, "Account Created", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "Signup Failed: ${task.exception?.message}",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+
 
             if (phoneInput.isEmpty() || phoneInput.length < 10) {
                 Toast.makeText(this, "Please Enter a Valid Mobile Number", Toast.LENGTH_SHORT).show()
@@ -52,8 +72,7 @@ class UserSignUpActivity : AppCompatActivity() {
             startPhoneNumberVerification(fullPhone)
         }
     }
-
-    private fun startPhoneNumberVerification(phoneNumber: String) {
+ private fun startPhoneNumberVerification(phoneNumber: String) {
         val options = PhoneAuthOptions.newBuilder(auth)
             .setPhoneNumber(phoneNumber)
             .setTimeout(60L, TimeUnit.SECONDS)
