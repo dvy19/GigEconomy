@@ -1,19 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="20dp"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="34dp"
     android:background="@color/white"
-    tools:context=".provider.HomeFragment">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvServiceTypes"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal" />
+        android:orientation="vertical"
+        android:background="@drawable/user_header"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
 
-</FrameLayout>
+        >
+
+        <TextView
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome Back"/>
+
+        <TextView
+            android:layout_marginTop="-5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:contentDescription="add"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/img"
+        android:scaleType="centerCrop"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Recent Requests"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/toAllJobsRequest"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="View All"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
+
+    <!-- Bottom Jobs RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/serviceRequests"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:scrollbars="vertical" />
+
+
+</LinearLayout>

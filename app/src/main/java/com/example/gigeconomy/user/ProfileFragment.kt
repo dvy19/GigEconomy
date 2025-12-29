@@ -59,13 +59,12 @@ class ProfileFragment : Fragment() {
                     val name = snapshot.getString("fullName") ?: ""
                     val homeAddress = snapshot.getString("homeAddress") ?: ""
                     val city = snapshot.getString("City") ?: ""
-                    val pin = snapshot.getString("pin") ?: ""
+
 
                     // Set data to UI
                     binding.userDisName.text = name
                     binding.userDisAddress.text = homeAddress
                     binding.userDisCity.text = city
-                    binding.userDisPin.text = pin
                 }
             }
             .addOnFailureListener {
