@@ -1,6 +1,7 @@
 package com.example.gigeconomy.provider
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,8 +35,14 @@ class HomeFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         adapter = ProviderBookingsAdapter(serviceList) { service ->
-            // TODO: Navigate to Job Details / Accept Screen
+            val intent = Intent(requireContext(), RequestServiceLayout::class.java)
+            intent.putExtra("bookingId", service.bookingId)
+
+            startActivity(intent)
         }
+
+        recyclerView.adapter = adapter
+
 
         recyclerView.adapter = adapter
 

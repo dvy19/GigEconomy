@@ -1,16 +1,22 @@
 package com.example.gigeconomy.provider
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gigeconomy.R
+import com.example.gigeconomy.ServiceLayoutActivity
 import com.example.gigeconomy.user.ServiceBooked
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+//this is the adapter of the requested booking item, which gets shows in provider's home screen.
 class ProviderBookingsAdapter(
     private val serviceList: List<ServiceBooked>,
     private val onItemClick: (ServiceBooked) -> Unit
@@ -45,7 +51,8 @@ class ProviderBookingsAdapter(
         holder.tvBookingTime.text =
             "Booked on: ${formatTime(service.bookingTime)}"
 
-        // Status color background
+
+
         when (service.status) {
             "requested" ->
                 holder.tvStatus.setBackgroundResource(R.drawable.bg_status_requested)
@@ -53,12 +60,12 @@ class ProviderBookingsAdapter(
                 holder.tvStatus.setBackgroundResource(R.drawable.bg_status_ongoing)
             "completed" ->
                 holder.tvStatus.setBackgroundResource(R.drawable.bg_status_completed)
-
         }
-
-        holder.itemView.setOnClickListener {
+        holder.tvStatus.setOnClickListener {
             onItemClick(service)
         }
+
+
     }
 
     override fun getItemCount(): Int = serviceList.size
@@ -68,3 +75,4 @@ class ProviderBookingsAdapter(
         return sdf.format(Date(timeMillis))
     }
 }
+
