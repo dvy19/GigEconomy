@@ -30,8 +30,28 @@ class ProviderSignupActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
+        binding.toProviderLogin.setOnClickListener{
+            startActivity(Intent(this, ProviderLoginActivity::class.java))
+        }
+
         binding.userMobileSubmit.setOnClickListener {
             val phoneInput = binding.providerMobile.text.toString().trim()
+
+            val mail=binding.providerMail.text.toString().trim()
+            val pass=binding.providerPassword.text.toString()
+
+            auth.createUserWithEmailAndPassword(mail, pass)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this, "Account Created", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "Signup Failed: ${task.exception?.message}",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
 
             if (phoneInput.isEmpty() || phoneInput.length < 10) {
                 Toast.makeText(this, "Please Enter a Valid Mobile Number", Toast.LENGTH_SHORT).show()

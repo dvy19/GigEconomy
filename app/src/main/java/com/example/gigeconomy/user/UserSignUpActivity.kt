@@ -36,14 +36,12 @@ class UserSignUpActivity : AppCompatActivity() {
 
         binding.userMobileSubmit.setOnClickListener {
 
-            binding.userMobileSubmit.isEnabled = false
-            binding.userMobileSubmit.text = "Sending..."
-            binding.userMobileSubmit.setBackgroundColor(Color.parseColor("#40fac238"))
+
 
 
             val phoneInput = binding.userMobile.text.toString().trim()
 
-            val email=binding.userMobile.text.toString()
+            val email=binding.userMail.text.toString().trim()
             val password=binding.userPassword.text.toString()
 
             auth.createUserWithEmailAndPassword(email, password)

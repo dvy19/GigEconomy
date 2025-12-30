@@ -10,7 +10,7 @@
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create an Account"
+        android:text="Login to Your Account"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="25sp"/>
@@ -39,26 +39,6 @@
         android:hint="Create a Password"
         android:textColor="@color/black"/>
 
-    <EditText
-
-        android:background="@drawable/number_input"
-        android:id="@+id/providerMobile"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:layout_marginTop="20dp"
-        android:inputType="number"
-        android:textColorHint="#50000000"
-        android:hint="Enter Mobile Number "
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:layout_marginTop="4dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="By tapping to Send Code, you agree to our terms.\nYou may recieve SMS notifications from us."
-        android:textColor="#40000000"
-        />
 
     <Button
 
@@ -67,27 +47,12 @@
         android:layout_width="match_parent"
         android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
-        android:text="Continue"
+        android:text="Login"
         android:elevation="4dp"
-
         android:textSize="18sp"
         android:textAllCaps="false"
         android:clickable="true"
         android:focusable="true"
-        android:id="@+id/userMobileSubmit"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login Here"
-        android:id="@+id/toProviderLogin"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:textSize="18sp"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_marginTop="12dp"
+        android:id="@+id/userLogin"
         />
 </LinearLayout>

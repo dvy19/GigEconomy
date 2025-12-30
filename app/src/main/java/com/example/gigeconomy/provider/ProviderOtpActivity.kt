@@ -30,7 +30,7 @@ class ProviderOtpActivity : AppCompatActivity() {
         val verificationId = intent.getStringExtra("verificationId")
 
         binding.userOtpSubmit.setOnClickListener {
-            val otp = binding.providerOtp.text.toString().trim()
+            val otp = binding.providerOTP.text.toString().trim()
 
             if (otp.isEmpty()) {
                 Toast.makeText(this, "Please Enter OTP First", Toast.LENGTH_SHORT).show()
