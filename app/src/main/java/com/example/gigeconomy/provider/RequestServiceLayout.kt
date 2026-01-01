@@ -44,10 +44,23 @@ class RequestServiceLayout : AppCompatActivity() {
                     ?: return@addOnSuccessListener
 
 
-                binding.agreeRequest.setOnClickListener{
-                    booking.status="Confirmed"
-                    Toast.makeText(this,"Confirmed",Toast.LENGTH_SHORT).show()
+                binding.agreeRequest.setOnClickListener {
+
+                    binding.agreeRequest.isEnabled = false   // prevent double click
+
+                    db.collection("bookings")
+                        .document(bookingId)
+                        .update("status", "confirmed")
+                        .addOnSuccessListener {
+                            Toast.makeText(this, "Booking Confirmed", Toast.LENGTH_SHORT).show()
+
+                        }
+                        .addOnFailureListener { e ->
+                            binding.agreeRequest.isEnabled = true
+                            Toast.makeText(this, "Failed: ${e.message}", Toast.LENGTH_SHORT).show()
+                        }
                 }
+
                 // ✅ Bind booking/service details
                 bindBookingData(booking)
 

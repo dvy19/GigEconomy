@@ -16,11 +16,12 @@ import com.example.gigeconomy.provider.jobDetails
 class OngoingServicesAdapter(private val bookingList: List<ServiceBooked>) :
     RecyclerView.Adapter<OngoingServicesAdapter.BookingViewHolder>() {
 
+
+
     class BookingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val serviceType: TextView = itemView.findViewById(R.id.txtServiceType)
         val companyName: TextView = itemView.findViewById(R.id.txtCompanyName)
         val rate: TextView = itemView.findViewById(R.id.txtRate)
-        val imageCategory: ImageView = itemView.findViewById(R.id.imgCategory)
         val status: TextView = itemView.findViewById(R.id.ServiceStatus)
     }
 
@@ -32,28 +33,27 @@ class OngoingServicesAdapter(private val bookingList: List<ServiceBooked>) :
 
     override fun onBindViewHolder(holder: BookingViewHolder, position: Int) {
 
+
         val booking = bookingList[position]
 
         holder.serviceType.text = booking.serviceType
         holder.companyName.text = booking.category
         holder.rate.text = "₹${booking.rate}"
-        holder.imageCategory.setImageResource(getCategoryImage(booking.category))
+       // holder.imageCategory.setImageResource(getCategoryImage(booking.category))
        holder.status.text=booking.status
 
 
-
-    }
-
-    private fun getCategoryImage(category: String): Int {
-        return when (category.lowercase()) {
-            "plumber" -> R.drawable.technician
-            "chef" -> R.drawable.chef
-            "electrician" -> R.drawable.electrician
-            "vehicle" -> R.drawable.mechanic
-            "gardening" -> R.drawable.gardening
-            else -> R.drawable.chef
+        when (booking.status) {
+            "confirmed" -> holder.status.text = "Ongoing"
+            "requested" -> holder.status.text = "Requested"
+            "completed" -> holder.status.text = "Completed"
+            else -> holder.status.text = booking.status
         }
+
+
+
     }
+
 
     override fun getItemCount(): Int = bookingList.size
 }

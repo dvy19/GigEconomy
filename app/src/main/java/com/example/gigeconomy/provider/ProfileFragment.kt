@@ -10,10 +10,13 @@ import com.example.gigeconomy.GetStarted
 import com.example.gigeconomy.R
 import com.example.gigeconomy.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
+    private  var auth= FirebaseAuth.getInstance()
+    private var db= FirebaseFirestore.getInstance()
 
 
     override fun onCreateView(
@@ -38,8 +41,29 @@ class ProfileFragment : Fragment() {
             requireActivity().finish()
         }
 
+    }
 
 
+    private fun providerDetail(){
+
+        val uid=auth.currentUser?.uid?:return
+
+        db.collection("provider")
+            .document(uid)
+            .get()
+            .addOnSuccessListener{ doc->
+                if(doc.exists()){
+                    val name = doc.getString("fullName") ?: ""
+                    val homeAddress = doc.getString("homeAddress") ?: ""
+                    val city = doc.getString("City") ?: ""
+
+
+                    // Set data to UI
+                    binding.providerDisName.text = name
+                    binding.providerDisAddress.text = homeAddress
+                    binding.providerDisCity.text = city
+                }
+            }
 
     }
 }

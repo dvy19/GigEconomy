@@ -52,32 +52,33 @@ class OngoingReqFragment : Fragment() {
     private fun loadOngoingServices(){
 
 
-        db.collection("bookings")
-            .whereEqualTo("userId",currentUser!!.uid)
-            .whereIn("status",listOf("requested","ongoing"))
-            .get()
-            .addOnSuccessListener{snapshot->
-                bookingList.clear()
-                for(doc in snapshot.documents){
-                    val booking=doc.toObject(ServiceBooked::class.java)
-                    if(booking!=null) bookingList.add(booking)
+            db.collection("bookings")
+                .whereEqualTo("userId", currentUser!!.uid)
+                .whereIn("status", listOf("requested", "confirmed", "ongoing"))
+                .addSnapshotListener { snapshot, error ->
+
+                    if (error != null) {
+                        Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()
+                        return@addSnapshotListener
+                    }
+
+                    bookingList.clear()
+
+                    snapshot?.documents?.forEach { doc ->
+                        doc.toObject(ServiceBooked::class.java)?.let {
+                            bookingList.add(it)
+                        }
+                    }
+
+                    if (bookingList.isEmpty()) {
+                        Toast.makeText(requireContext(), "No ongoing request", Toast.LENGTH_SHORT).show()
+                    }
+
+                    adapter.notifyDataSetChanged()
                 }
+        }
 
-                if(bookingList.isEmpty()){
-                    Toast.makeText(requireContext(),"no ongoing request",Toast.LENGTH_SHORT).show()
-                }
-
-                adapter.notifyDataSetChanged()
-            }
-
-            .addOnFailureListener{e->
-                Toast.makeText(requireContext(),"${e.message}",Toast.LENGTH_SHORT).show()
-
-            }
 
     }
 
 
-
-
-}
