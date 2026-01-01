@@ -38,6 +38,10 @@
             android:layout_gravity="center"
             />
 
+
+
+
+
         <EditText
             android:textColorHint="@color/black"
             android:background="@drawable/inputs"

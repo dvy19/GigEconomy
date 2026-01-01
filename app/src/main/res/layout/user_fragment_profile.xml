@@ -2,20 +2,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:padding="34dp"
+    android:paddingStart="34dp"
+    android:paddingEnd="34dp"
     android:background="@drawable/download"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="My Profile"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:gravity="center"
-        />
-
+    <include
+        android:id="@+id/appTopBar"
+        layout="@layout/top_bar"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,10 +21,10 @@
         >
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="120dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/chef"
+            android:src="@drawable/boy"
             android:layout_gravity="center"
             />
 

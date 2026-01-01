@@ -1,8 +1,11 @@
 package com.example.gigeconomy.user
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gigeconomy.databinding.UserGetDetailsBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -11,6 +14,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 class UserDetailActivity : AppCompatActivity() {
     private lateinit var binding: UserGetDetailsBinding
     private lateinit var firestore: FirebaseFirestore
+    private lateinit var imagePickerLauncher: ActivityResultLauncher<String>
+    private var selectedImageUri:Uri?=null
 
     private lateinit  var auth: FirebaseAuth
 
@@ -23,6 +28,14 @@ class UserDetailActivity : AppCompatActivity() {
         // Initialize Firestore
         firestore = FirebaseFirestore.getInstance()
         auth= FirebaseAuth.getInstance()
+
+        imagePickerLauncher=registerForActivityResult(ActivityResultContracts.GetContent()){uri->
+            if(uri!=null){
+                selectedImageUri=uri
+                binding.userProfilePic.setImageURI(uri)
+
+            }
+        }
 
         binding.submitUserDetails.setOnClickListener{
 

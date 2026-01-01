@@ -30,6 +30,7 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+       binding.appTopBar.tvTitle.text="Profile"
 
         binding.userLogout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()

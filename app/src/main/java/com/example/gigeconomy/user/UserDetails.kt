@@ -9,6 +9,7 @@ data class UserDetails(
     val landMark: String = "",
     val City: String = "",
     val pin: String = "",
+    val profileImageUrl: String? = null,   // 👈 OPTIONAL
 
     val timestamp: Date = Date()
 )
