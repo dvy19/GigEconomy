@@ -1,6 +1,7 @@
 package com.example.gigeconomy.provider
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -25,6 +26,8 @@ class RequestServiceLayout : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        loadBookingAndUser(bookingId)
+
 
 
     }
@@ -40,6 +43,11 @@ class RequestServiceLayout : AppCompatActivity() {
                 val booking = bookingDoc.toObject(ServiceBooked::class.java)
                     ?: return@addOnSuccessListener
 
+
+                binding.agreeRequest.setOnClickListener{
+                    booking.status="Confirmed"
+                    Toast.makeText(this,"Confirmed",Toast.LENGTH_SHORT).show()
+                }
                 // ✅ Bind booking/service details
                 bindBookingData(booking)
 

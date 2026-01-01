@@ -29,6 +29,8 @@ class ProviderLoginActivity : AppCompatActivity() {
             var email=binding.providerMail.text.toString()
             var pass=binding.providerPassword.text.toString()
 
+            auth= FirebaseAuth.getInstance()
+
             auth.signInWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {

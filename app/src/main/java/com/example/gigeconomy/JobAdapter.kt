@@ -22,7 +22,7 @@ class JobAdapter(private val jobList: List<jobDetails>) :
         val serviceType: TextView = itemView.findViewById(R.id.ServiceType)
         val companyName: TextView = itemView.findViewById(R.id.companyName)
         val rate: TextView = itemView.findViewById(R.id.rate)
-        val imgService: ImageView = itemView.findViewById(R.id.imgCategory)
+        //val imgService: ImageView = itemView.findViewById(R.id.imgCategory)
         val city:TextView=itemView.findViewById(R.id.serviceCity)
 
         val viewJobDetail: Button= itemView.findViewById(R.id.viewJobDetail)
@@ -45,7 +45,7 @@ class JobAdapter(private val jobList: List<jobDetails>) :
         holder.companyName.text = job.companyName
         holder.rate.text = "₹${job.rate}"
         holder.city.text=job.city
-        holder.imgService.setImageResource(getCategoryImage(job.category))
+        //holder.imgService.setImageResource(getCategoryImage(job.category))
 
 
 
@@ -70,19 +70,10 @@ class JobAdapter(private val jobList: List<jobDetails>) :
 
             context.startActivity(intent)
         }
-        holder.imgService.setImageResource(getCategoryImage(job.category))
+        //holder.imgService.setImageResource(getCategoryImage(job.category))
     }
 
-    private fun getCategoryImage(category: String): Int {
-        return when (category.lowercase()) {
-            "plumber" -> R.drawable.technician
-            "chef" -> R.drawable.chef
-            "electrician" -> R.drawable.electrician
-            "vehicle" -> R.drawable.mechanic
-            "gardening" -> R.drawable.gardening
-            else -> R.drawable.chef
-        }
-    }
+
 
     override fun getItemCount(): Int = jobList.size
 }

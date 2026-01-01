@@ -9,7 +9,7 @@ data class ServiceBooked(
     val category: String = "",
     val rate: String = "",
     val city: String = "",
-    val status: String = "requested", // requested, ongoing, completed, cancelled
+    var status: String = "requested", // requested, ongoing, completed, cancelled
     val bookingTime: Long = System.currentTimeMillis(),
     val completionTime: Long? = null
 )
