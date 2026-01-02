@@ -29,13 +29,7 @@ class UserDetailActivity : AppCompatActivity() {
         firestore = FirebaseFirestore.getInstance()
         auth= FirebaseAuth.getInstance()
 
-        imagePickerLauncher=registerForActivityResult(ActivityResultContracts.GetContent()){uri->
-            if(uri!=null){
-                selectedImageUri=uri
-                binding.userProfilePic.setImageURI(uri)
 
-            }
-        }
 
         binding.submitUserDetails.setOnClickListener{
 

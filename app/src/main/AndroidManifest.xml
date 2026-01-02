@@ -17,6 +17,10 @@
         <activity
             android:name=".provider.RequestServiceLayout"
             android:exported="false" />
+
+        <activity
+            android:name=".user.CategoryWiseActivity"
+            android:exported="false" />
         <activity
             android:name=".provider.ProviderLoginActivity"
             android:exported="false" />

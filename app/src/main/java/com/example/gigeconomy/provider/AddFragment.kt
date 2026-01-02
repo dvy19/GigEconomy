@@ -48,22 +48,18 @@ class AddFragment : Fragment() {
             val city = binding.City.text.toString()
             val contact = binding.Contact.text.toString()
 
-            val category=binding.ServiceCategory.text.toString()
+            val category = binding.ServiceCategory.text.toString()
 
             // Optional: Check required fields
             if (serviceType.isEmpty() || ownerName.isEmpty() || rate.isEmpty()) {
-                Toast.makeText(requireContext(), "Fill all required fields", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Fill all required fields", Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
-
-            val jobId = firestore.collection("providers")
-                .document(currentUser.uid)
-                .collection("jobs")
-                .document()
-                .id
+            val jobId = firestore.collection("jobs").document().id
 
             val job = jobDetails(
-                jobId = jobId,  // add jobId inside object
+                jobId = jobId,
                 providerId = currentUser.uid,
                 serviceType = serviceType,
                 category = category,
@@ -71,24 +67,25 @@ class AddFragment : Fragment() {
                 ownerName = ownerName,
                 city = city,
                 contact = contact,
+                companyName = companyName,
                 rate = rate
             )
 
-
-            // Save job
-            firestore.collection("providers")
+            val globalJobRef = firestore.collection("jobs").document(jobId)
+            val providerJobRef = firestore.collection("providers")
                 .document(currentUser.uid)
                 .collection("jobs")
                 .document(jobId)
-                .set(job)
-                .addOnSuccessListener {
-                    Toast.makeText(requireContext(), "Job Saved Successfully", Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener { e ->
-                    Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-                }
 
-        }
-    }
+            firestore.runBatch { batch ->
+                batch.set(globalJobRef, job)
+                batch.set(providerJobRef, job)
+            }.addOnSuccessListener {
+                Toast.makeText(requireContext(), "Job Saved Successfully", Toast.LENGTH_SHORT)
+                    .show()
+            }.addOnFailureListener { e ->
+                Toast.makeText(requireContext(), "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+        }}
 
 }

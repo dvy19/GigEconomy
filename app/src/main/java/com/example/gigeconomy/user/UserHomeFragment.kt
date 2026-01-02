@@ -46,7 +46,6 @@ class UserHomeFragment : Fragment() {
         binding.rvServiceTypes.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvServiceTypes.adapter = ServiceAdapter(serviceTypes)
-
         // -------------------------------
         // Jobs RecyclerView
         // -------------------------------

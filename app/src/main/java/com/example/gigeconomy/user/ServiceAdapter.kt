@@ -1,6 +1,7 @@
 package com.example.gigeconomy.user
 
 
+import android.content.Intent
 import android.view.LayoutInflater
 import com.example.gigeconomy.R
 
@@ -8,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gigeconomy.databinding.ItemServiceBinding
 
@@ -24,6 +27,9 @@ class ServiceAdapter(
             LayoutInflater.from(parent.context), parent, false
         )
         return ServiceViewHolder(binding)
+
+
+
     }
 
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
@@ -31,18 +37,23 @@ class ServiceAdapter(
 
         holder.binding.txtServiceName.text = serviceName
 
-
-
-
+        holder.itemView.setOnClickListener {
+            val intent = Intent(
+                holder.itemView.context,
+                CategoryWiseActivity::class.java
+            )
+            intent.putExtra("CATEGORY", serviceName)
+            holder.itemView.context.startActivity(intent)
+        }
         // Set correct image based on service name
         val imageRes = when (serviceName) {
-            "Chef" ->R.drawable.chef
-            "Home Cleaning" -> R.drawable.housekeeping
-            "Gardening" -> R.drawable.gardening
-            "Vehicle Repair" -> R.drawable.mechanic
-            "Electrician" -> R.drawable.electrician
-            "Plumber" -> R.drawable.technician
-            else -> R.drawable.technician
+            "Chef" ->R.drawable.chef_c
+            "Home Cleaning" -> R.drawable.home_c
+            "Gardening" -> R.drawable.garden_c
+            "Vehicle Repair" -> R.drawable.mechanic_c
+            "Electrician" -> R.drawable.electric
+            "Plumber" -> R.drawable.plumber_c
+            else -> R.drawable.arrow
         }
 
 
