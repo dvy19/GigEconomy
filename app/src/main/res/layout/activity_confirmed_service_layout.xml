@@ -14,8 +14,6 @@
         android:scaleType="fitXY"
         />
 
-
-    <!-- Scrollable content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -29,47 +27,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:orientation="horizontal"
-               android:paddingStart="14dp"
-               android:paddingEnd="14dp"
-               android:paddingTop="4dp"
-               android:paddingBottom="4dp"
-               >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                >
 
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="match_parent"
-                   android:id="@+id/serviceDisCategory"
-                   android:text="Home"
-                   android:textColor="@color/black"
-                   android:textSize="16sp"
-                   android:background="#50fac238"
-                   android:padding="8dp"
-                   android:textStyle="bold"
-                   />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/serviceCnfCategory"
+                    android:text="Home"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:background="#50fac238"
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    />
 
-               <TextView
-                   android:layout_marginStart="10dp"
-                   android:layout_marginEnd="10dp"
-                   android:layout_width="wrap_content"
-                   android:layout_height="match_parent"
-                   android:id="@+id/serviceDisAddress"
-                   android:text="New York"
-                   android:textColor="@color/black"
-                   android:textSize="16sp"
-                   android:background="#20000000"
-                   android:padding="8dp"
-                   android:textStyle="bold"
-                   />
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/serviceCnfAddress"
+                    android:text="New York"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:background="#20000000"
+                    android:padding="8dp"
+                    android:textStyle="bold"
+                    />
 
-           </LinearLayout>
+            </LinearLayout>
 
 
             <TextView
-                android:id="@+id/serviceDisType"
+                android:id="@+id/serviceCnfType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="32sp"
@@ -99,12 +97,14 @@
                 android:paddingEnd="14dp"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
+
                 >
 
                 <ImageView
-                    android:layout_width="34dp"
-                    android:layout_height="34dp"
-                    android:src="@drawable/chef"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/worker"
+                    android:layout_gravity="center"
                     />
 
                 <LinearLayout
@@ -120,7 +120,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:textSize="20sp"
-                        android:id="@+id/serviceDisCompanyName"
+                        android:id="@+id/serviceCnfCompanyName"
                         />
 
                     <TextView
@@ -131,7 +131,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:textSize="14sp"
-                        android:id="@+id/serviceDisOwnerName"
+                        android:id="@+id/serviceCnfOwnerName"
                         />
                 </LinearLayout>
 
@@ -161,7 +161,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:textSize="14sp"
-                android:id="@+id/serviceDisDescription"
+                android:id="@+id/serviceCnfDescription"
                 />
 
 
@@ -201,9 +201,25 @@
                     android:rotation="-180"
                     android:layout_gravity="center"
                     />
+            </LinearLayout>
 
-
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="14dp"
+                android:background="#20000000"
+                android:padding="16dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:text="Workers details will Appear here"
+                    />
 
             </LinearLayout>
 
@@ -247,12 +263,12 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
 
-                android:id="@+id/serviceDisRate"
+                android:id="@+id/serviceCnfRate"
                 />
         </LinearLayout>
 
         <Button
-            android:id="@+id/bookService"
+            android:id="@+id/cnfServiceStatus"
             android:layout_width="0dp"
             android:layout_weight="3"
             android:layout_height="60dp"

@@ -17,7 +17,7 @@
         >
 
         <TextView
-            android:textColor="@color/black"
+            android:textColor="#60000000"
             android:textSize="14sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Username"
+            android:id="@+id/homeUsername"
             android:textSize="24sp"
             android:textColor="@color/black"
             />
@@ -93,6 +94,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:orientation="horizontal" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCommunityPosts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:clipToPadding="false" />
 
     <LinearLayout
         android:layout_width="match_parent"

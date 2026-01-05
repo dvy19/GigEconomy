@@ -36,11 +36,7 @@ class UserSignUpActivity : AppCompatActivity() {
 
         binding.userMobileSubmit.setOnClickListener {
 
-
-
-
             val phoneInput = binding.userMobile.text.toString().trim()
-
             val email=binding.userMail.text.toString().trim()
             val password=binding.userPassword.text.toString()
 

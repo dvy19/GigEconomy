@@ -46,11 +46,6 @@ class ServiceLayoutActivity : AppCompatActivity() {
                 ContextCompat.getColor(this, R.color.white)
             )
 
-
-
-
-
-
             if (job == null) {
                 Toast.makeText(this, "Job not loaded yet", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -86,9 +81,6 @@ class ServiceLayoutActivity : AppCompatActivity() {
                     binding.bookService.text = "Added"
                     binding.bookService.setBackgroundColor(Color.parseColor("#FF5722"))
 
-
-
-
                 }
                 .addOnFailureListener { e ->
                     Toast.makeText(this, "Booking failed: ${e.message}", Toast.LENGTH_SHORT).show()
@@ -121,7 +113,6 @@ class ServiceLayoutActivity : AppCompatActivity() {
                     binding.serviceDisDescription.text = it.serviceDes
                     binding.serviceDisOwnerName.text = it.ownerName
                     binding.serviceDisCompanyName.text = it.companyName
-
                     binding.serviceDisRate.text = "₹${it.rate}"
                 }
             }

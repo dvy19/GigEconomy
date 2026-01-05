@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Post"
+
+            android:textColor="@color/black"
+            android:textSize="40sp"
+
+            />
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/postContent"
+            android:background="@drawable/inputs"
+            android:hint="Enter Post Content Here..."
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="156dp"
+            android:gravity="start"
+            android:id="@+id/postCompany"
+            android:background="@drawable/inputs"
+            android:hint="Enter Post Content Here..."
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:maxLines="5"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_back"
+            android:text="Post"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:clickable="true"
+            android:focusable="true"
+
+            android:layout_marginTop="12dp"
+            android:id="@+id/submitPost"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

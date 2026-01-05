@@ -12,7 +12,6 @@ import com.example.gigeconomy.databinding.OngoingServiceLayoutBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-// TODO: Rename parameter arguments, choose names that match
 
 class OngoingReqFragment : Fragment() {
 

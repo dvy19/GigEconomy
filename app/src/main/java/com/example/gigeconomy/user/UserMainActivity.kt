@@ -1,17 +1,12 @@
 package com.example.gigeconomy.user
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.gigeconomy.R
 import com.example.gigeconomy.databinding.ActivityUserMainBinding
-import com.example.gigeconomy.databinding.ProviderActivityMainBinding
-import com.example.gigeconomy.provider.AddFragment
-import com.example.gigeconomy.provider.HomeFragment
+import com.example.gigeconomy.user.posts.UserPostFragment
 
 class UserMainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUserMainBinding
@@ -36,6 +31,10 @@ class UserMainActivity : AppCompatActivity() {
 
         binding.ongoingReq.setOnClickListener{
             goToFragment(OngoingReqFragment())
+        }
+
+        binding.userCreate.setOnClickListener{
+            goToFragment(UserPostFragment())
         }
 
 

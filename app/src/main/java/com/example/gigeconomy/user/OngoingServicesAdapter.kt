@@ -19,9 +19,9 @@ class OngoingServicesAdapter(private val bookingList: List<ServiceBooked>) :
 
 
     class BookingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val serviceType: TextView = itemView.findViewById(R.id.txtServiceType)
-        val companyName: TextView = itemView.findViewById(R.id.txtCompanyName)
-        val rate: TextView = itemView.findViewById(R.id.txtRate)
+        val serviceType: TextView = itemView.findViewById(R.id.ServiceType)
+        val companyName: TextView = itemView.findViewById(R.id.companyName)
+        val rate: TextView = itemView.findViewById(R.id.rate)
         val status: TextView = itemView.findViewById(R.id.ServiceStatus)
     }
 
@@ -41,6 +41,16 @@ class OngoingServicesAdapter(private val bookingList: List<ServiceBooked>) :
         holder.rate.text = "₹${booking.rate}"
        // holder.imageCategory.setImageResource(getCategoryImage(booking.category))
        holder.status.text=booking.status
+
+      holder.status.setOnClickListener{
+          val context = holder.itemView.context
+
+          val intent = Intent(context, ConfirmedServiceLayout::class.java)
+          intent.putExtra("jobId", booking.jobId)
+          intent.putExtra("providerId", booking.providerId)
+
+          context.startActivity(intent)
+      }
 
 
         when (booking.status) {

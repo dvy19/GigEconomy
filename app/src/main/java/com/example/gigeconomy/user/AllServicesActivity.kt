@@ -8,6 +8,9 @@ import com.example.gigeconomy.databinding.ViewServicesBinding
 import com.example.gigeconomy.provider.jobDetails
 import com.google.firebase.firestore.FirebaseFirestore
 
+
+//this is the screen where all services are listed with a filter.
+// when user clicks the view all in home fragment then it moves to here.
 class AllServicesActivity : AppCompatActivity() {
 
     private lateinit var binding: ViewServicesBinding

@@ -10,14 +10,17 @@ import com.example.gigeconomy.provider.jobDetails
 import com.google.firebase.firestore.FirebaseFirestore
 
 
+//this is the activity which shows category wise jobs
+
 class CategoryWiseActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: CategoryWiseAdapter
     private val jobList = mutableListOf<jobDetails>()
 
-    private lateinit var binding: CategoryJobsBinding
 
+
+    private lateinit var binding: CategoryJobsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
 
         binding= CategoryJobsBinding.inflate(layoutInflater)
