@@ -19,9 +19,9 @@ class OngoingServicesAdapter(private val bookingList: List<ServiceBooked>) :
 
 
     class BookingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val serviceType: TextView = itemView.findViewById(R.id.ServiceType)
-        val companyName: TextView = itemView.findViewById(R.id.companyName)
-        val rate: TextView = itemView.findViewById(R.id.rate)
+        val serviceType: TextView = itemView.findViewById(R.id.txtServiceType)
+        val companyName: TextView = itemView.findViewById(R.id.txtCompanyName)
+        val rate: TextView = itemView.findViewById(R.id.txtRate)
         val status: TextView = itemView.findViewById(R.id.ServiceStatus)
     }
 
