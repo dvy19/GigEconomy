@@ -40,6 +40,15 @@ class UserSignUpActivity : AppCompatActivity() {
             val email=binding.userMail.text.toString().trim()
             val password=binding.userPassword.text.toString()
 
+            if(email.isEmpty() || password.isEmpty() || phoneInput.isEmpty()){
+                Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if(password.length<6){
+                Toast.makeText(this, "Password should be at least 6 characters", Toast.LENGTH_SHORT).show()
+            }
+
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
@@ -47,7 +56,7 @@ class UserSignUpActivity : AppCompatActivity() {
                     } else {
                         Toast.makeText(
                             this,
-                            "Signup Failed: ${task.exception?.message}",
+                            "Signup Failed: ",
                             Toast.LENGTH_LONG
                         ).show()
                     }

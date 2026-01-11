@@ -29,6 +29,11 @@ class ProviderLoginActivity : AppCompatActivity() {
             var email=binding.providerMail.text.toString()
             var pass=binding.providerPassword.text.toString()
 
+            if(email.isEmpty() || pass.isEmpty()){
+                Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             auth= FirebaseAuth.getInstance()
 
             auth.signInWithEmailAndPassword(email, pass)

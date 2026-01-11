@@ -40,6 +40,14 @@ class ProviderSignupActivity : AppCompatActivity() {
             val mail=binding.providerMail.text.toString().trim()
             val pass=binding.providerPassword.text.toString()
 
+            if(mail.isEmpty() || pass.isEmpty() || phoneInput.isEmpty()){
+                Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if(pass.length<6){
+                Toast.makeText(this, "Password should be at least 6 characters", Toast.LENGTH_SHORT).show()
+            }
             auth.createUserWithEmailAndPassword(mail, pass)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {

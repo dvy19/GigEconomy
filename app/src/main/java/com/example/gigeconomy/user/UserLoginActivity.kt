@@ -29,6 +29,11 @@ class UserLoginActivity : AppCompatActivity() {
             var email=binding.userMail.text.toString().trim()
             var pass=binding.userPassword.text.toString()
 
+            if(email.isEmpty() || pass.isEmpty()){
+                Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             auth.signInWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
