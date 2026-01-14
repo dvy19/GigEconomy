@@ -22,11 +22,9 @@ class UserHomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
 
-    // Jobs
     private lateinit var jobAdapter: JobAdapter
     private val jobList = mutableListOf<jobDetails>()
 
-    // Community posts
     private lateinit var postAdapter: PostAdapter
     private val postList = mutableListOf<postCommunity>()
 
@@ -47,9 +45,7 @@ class UserHomeFragment : Fragment() {
         val uid = auth.currentUser?.uid ?: return
 
 
-        // -------------------------
-        // Load user info (username)
-        // -------------------------
+
         db.collection("users")
             .document(uid)
             .get()

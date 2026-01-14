@@ -47,54 +47,111 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
-            android:background="@drawable/bg_status_completed">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="12dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-                <TextView
+                <!-- ================= HORIZONTAL SERVICE CARDS ================= -->
+
+                <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Make a Service Request"
-                    android:textSize="26sp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    />
+                    android:scrollbars="none"
+                    android:paddingVertical="8dp">
 
-                <Button
-                    android:layout_marginTop="8dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Create"
-                    android:padding="0dp"
-                    android:textSize="17sp"
-                    android:textColor="@color/black"
-                    android:textAllCaps="false"
-                    android:background="@drawable/bg_status_ongoing"
-                    />
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:layout_height="match_parent"
-                android:src="@drawable/worker_home"
-                />
+                        <!-- ===== CARD 1 ===== -->
+                        <LinearLayout
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="24dp"
+                            android:layout_marginEnd="12dp"
+                            android:background="@drawable/bg_status_completed">
+
+                            <!-- TEXT PART -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Make a Service Request"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/white"/>
+
+                                <Button
+                                    android:layout_marginTop="10dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Create"
+                                    android:id="@+id/publicRequest"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:background="@drawable/bg_status_ongoing"/>
+                            </LinearLayout>
+
+                            <!-- IMAGE PART -->
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/worker_home"/>
+                        </LinearLayout>
+
+                        <!-- ===== CARD 2 ===== -->
+                        <LinearLayout
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="24dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:background="@drawable/bg_status_requested">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="View All Services"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/white"/>
+
+                                <Button
+                                    android:layout_marginTop="10dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="View"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/black"
+                                    android:background="@drawable/bg_status_completed"/>
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/worker_home"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
 
 
-        </LinearLayout>
+
 
 
         <androidx.recyclerview.widget.RecyclerView
