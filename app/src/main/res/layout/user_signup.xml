@@ -27,17 +27,28 @@
         android:textColorHint="#50000000"
         android:hint="Enter your Email"
         android:textColor="@color/black"/>
-
-    <EditText
-        android:background="@drawable/number_input"
-        android:id="@+id/userPassword"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:layout_marginTop="20dp"
-        android:textColorHint="#50000000"
-        android:hint="Create a Password"
-        android:textColor="@color/black"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"/>
+
+        <ImageView
+            android:id="@+id/ivToggle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_eye_closed"
+            android:padding="6dp"/>
+    </LinearLayout>
+
 
     <EditText
 

@@ -22,6 +22,9 @@ class UserDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        supportActionBar?.hide()
+        
+
         binding = UserGetDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

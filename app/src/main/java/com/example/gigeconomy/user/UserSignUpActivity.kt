@@ -30,6 +30,8 @@ class UserSignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
+        supportActionBar?.hide()
+
         binding.toUserLogin.setOnClickListener{
             startActivity(Intent(this, UserLoginActivity::class.java))
         }

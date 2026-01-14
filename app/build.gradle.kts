@@ -102,6 +102,7 @@ dependencies {
     implementation(libs.firebase.database)
     implementation(libs.androidx.activity)
     implementation(libs.firebase.firestore)
+    implementation(libs.firebase.storage)
 
     // Testing
     testImplementation(libs.junit)

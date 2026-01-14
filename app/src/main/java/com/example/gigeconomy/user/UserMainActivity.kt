@@ -40,6 +40,7 @@ class UserMainActivity : AppCompatActivity() {
 
 
 
+        supportActionBar?.hide()
 
     }
 

@@ -23,6 +23,8 @@ class UserOTPActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = UserOtpactivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
+
 
         auth = FirebaseAuth.getInstance()
 

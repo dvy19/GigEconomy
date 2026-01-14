@@ -46,6 +46,7 @@ class UserHomeFragment : Fragment() {
 
         val uid = auth.currentUser?.uid ?: return
 
+
         // -------------------------
         // Load user info (username)
         // -------------------------

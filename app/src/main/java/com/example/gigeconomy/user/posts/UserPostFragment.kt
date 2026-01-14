@@ -31,11 +31,17 @@ class UserPostFragment : Fragment() {
 
         binding.submitPost.setOnClickListener {
 
-
             val currentUser = auth.currentUser ?: return@setOnClickListener
 
             val company = binding.postCompany.text.toString().trim()
             val content=binding.postContent.text.toString().trim()
+
+            if (company.isEmpty() || content.isEmpty()) {
+                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+
             firestore.collection("users")
                 .document(currentUser.uid)
                 .get()

@@ -15,6 +15,7 @@ class GetStarted : AppCompatActivity() {
     private lateinit var binding: GetStartBinding
     override fun onCreate(savedInstanceState: Bundle?) {
 
+        supportActionBar?.hide()
         binding= GetStartBinding.inflate(layoutInflater)
 
         super.onCreate(savedInstanceState)
