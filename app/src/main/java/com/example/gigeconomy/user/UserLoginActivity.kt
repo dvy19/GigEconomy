@@ -2,6 +2,7 @@ package com.example.gigeconomy.user
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,24 @@ class UserLoginActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+        var isPasswordVisible = false
+
+        binding.ivToggle.setOnClickListener {
+            isPasswordVisible = !isPasswordVisible
+
+            if (isPasswordVisible) {
+                binding.userPassword.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                binding.ivToggle.setImageResource(R.drawable.pass_eye)
+            } else {
+                binding.userPassword.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                binding.ivToggle.setImageResource(R.drawable.hidden)
+            }
+
+            // Move cursor to end
+            binding.userPassword.setSelection(binding.userPassword.text.length)
+        }
 
         auth= FirebaseAuth.getInstance()
 

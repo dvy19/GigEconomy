@@ -4,6 +4,7 @@ import android.R.attr.phoneNumber
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.text.InputType
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -35,7 +36,24 @@ class UserSignUpActivity : AppCompatActivity() {
         binding.toUserLogin.setOnClickListener{
             startActivity(Intent(this, UserLoginActivity::class.java))
         }
+        var isPasswordVisible = false
 
+        binding.ivToggle.setOnClickListener {
+            isPasswordVisible = !isPasswordVisible
+
+            if (isPasswordVisible) {
+                binding.userPassword.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                binding.ivToggle.setImageResource(R.drawable.pass_eye)
+            } else {
+                binding.userPassword.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                binding.ivToggle.setImageResource(R.drawable.hidden)
+            }
+
+            // Move cursor to end
+            binding.userPassword.setSelection(binding.userPassword.text.length)
+        }
         binding.userMobileSubmit.setOnClickListener {
 
             val phoneInput = binding.userMobile.text.toString().trim()

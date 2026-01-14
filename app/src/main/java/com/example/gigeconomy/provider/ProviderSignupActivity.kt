@@ -3,6 +3,7 @@ package com.example.gigeconomy.provider
 import android.R.attr.phoneNumber
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +33,24 @@ class ProviderSignupActivity : AppCompatActivity() {
 
         binding.toProviderLogin.setOnClickListener{
             startActivity(Intent(this, ProviderLoginActivity::class.java))
+        }
+        var isPasswordVisible = false
+
+        binding.ivToggle.setOnClickListener {
+            isPasswordVisible = !isPasswordVisible
+
+            if (isPasswordVisible) {
+                binding.providerPassword.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                binding.ivToggle.setImageResource(R.drawable.pass_eye)
+            } else {
+                binding.providerPassword.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                binding.ivToggle.setImageResource(R.drawable.hidden)
+            }
+
+            // Move cursor to end
+            binding.providerPassword.setSelection(binding.providerPassword.text.length)
         }
 
         binding.userMobileSubmit.setOnClickListener {
