@@ -35,6 +35,9 @@ class ProviderLoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+
+            supportActionBar?.hide()
+
             var isPasswordVisible = false
 
             binding.ivToggle.setOnClickListener {

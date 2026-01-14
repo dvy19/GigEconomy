@@ -26,11 +26,15 @@ class AddFragment : Fragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
+
+        binding.appTopBar.tvTitle.text = "Add Service"
+
 
         binding.btnServviceSubmit.setOnClickListener {
 
@@ -51,7 +55,7 @@ class AddFragment : Fragment() {
             val category = binding.ServiceCategory.text.toString()
 
             // Optional: Check required fields
-            if (serviceType.isEmpty() || ownerName.isEmpty() || rate.isEmpty()) {
+            if (serviceType.isEmpty() || ownerName.isEmpty() || rate.isEmpty() || serviceDes.isEmpty() || city.isEmpty() || contact.isEmpty() || category.isEmpty()) {
                 Toast.makeText(requireContext(), "Fill all required fields", Toast.LENGTH_SHORT)
                     .show()
                 return@setOnClickListener

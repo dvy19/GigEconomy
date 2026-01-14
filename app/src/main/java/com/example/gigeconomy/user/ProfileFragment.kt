@@ -40,18 +40,8 @@ class ProfileFragment : Fragment() {
 
         binding.appTopBar.tvTitle.text = "Profile"
 
-        // Image picker
-        imagePickerLauncher =
-            registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
-                if (uri != null) {
-                    binding.profileImage.setImageURI(uri)
-                    uploadImageToFirebase(uri)
-                }
-            }
 
-        binding.addUserpic.setOnClickListener {
-            imagePickerLauncher.launch("image/*")
-        }
+
 
         binding.userLogout.setOnClickListener {
             auth.signOut()
@@ -65,38 +55,7 @@ class ProfileFragment : Fragment() {
     }
 
 
-    private fun uploadImageToFirebase(imageUri: Uri) {
-        val uid = auth.currentUser?.uid ?: return
 
-        val storageRef = storage.reference
-            .child("profile_images/$uid/profile.jpg")
-
-
-        storageRef.putFile(imageUri)
-            .addOnSuccessListener {
-                storageRef.downloadUrl.addOnSuccessListener { downloadUrl ->
-                    saveImageUrlToFirestore(downloadUrl.toString())
-                }
-            }
-            .addOnFailureListener {e->
-                Toast.makeText(requireContext(), "Upload failed : ${e.message}", Toast.LENGTH_SHORT).show()
-            }
-    }
-
-    // 🔹 Save image URL to Firestore
-    private fun saveImageUrlToFirestore(imageUrl: String) {
-        val uid = auth.currentUser?.uid ?: return
-
-        db.collection("users")
-            .document(uid)
-            .update("profileImageUrl", imageUrl)
-            .addOnSuccessListener {
-                Toast.makeText(requireContext(), "Profile photo updated", Toast.LENGTH_SHORT).show()
-            }
-            .addOnFailureListener {
-                Toast.makeText(requireContext(), "Failed to save image", Toast.LENGTH_SHORT).show()
-            }
-    }
 
     // 🔹 Load profile data
     private fun loadProfile() {

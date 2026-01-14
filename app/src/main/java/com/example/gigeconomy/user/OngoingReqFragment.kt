@@ -1,5 +1,6 @@
 package com.example.gigeconomy.user
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -48,6 +49,7 @@ class OngoingReqFragment : Fragment() {
         binding.ongoingServices.adapter=adapter
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun loadOngoingServices(){
 
 
@@ -63,9 +65,12 @@ class OngoingReqFragment : Fragment() {
 
                     bookingList.clear()
 
+
+
                     snapshot?.documents?.forEach { doc ->
-                        doc.toObject(ServiceBooked::class.java)?.let {
-                            bookingList.add(it)
+                        val booking = doc.toObject(ServiceBooked::class.java)
+                        if (booking != null && booking.userId == currentUser!!.uid) {
+                            bookingList.add(booking)
                         }
                     }
 

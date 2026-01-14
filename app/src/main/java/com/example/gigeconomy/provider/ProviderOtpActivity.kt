@@ -26,6 +26,9 @@ class ProviderOtpActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
+        supportActionBar?.hide()
+
+
         // Get the actual verificationId from intent
         val verificationId = intent.getStringExtra("verificationId")
 

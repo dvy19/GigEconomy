@@ -21,6 +21,9 @@ class ProviderMainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
+        supportActionBar?.hide()
+
+
         setContentView(binding.root)
 
         binding.providerHome.setOnClickListener{

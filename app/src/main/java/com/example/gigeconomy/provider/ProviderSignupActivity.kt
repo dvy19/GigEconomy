@@ -64,6 +64,8 @@ class ProviderSignupActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            supportActionBar?.hide()
+
             if(pass.length<6){
                 Toast.makeText(this, "Password should be at least 6 characters", Toast.LENGTH_SHORT).show()
             }

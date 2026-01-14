@@ -28,6 +28,8 @@ class ProviderDetailsActivity : AppCompatActivity() {
         auth= FirebaseAuth.getInstance()
 
 
+        supportActionBar?.hide()
+
 
         binding.submitProviderDetails.setOnClickListener{
 
